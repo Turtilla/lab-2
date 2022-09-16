@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import json
+import requests
 
 from flask import Flask, request
 from jinja2 import Environment
@@ -149,3 +150,18 @@ def action_success_response():
         mimetype='application/json'
     )
     return response
+
+@app.route("/weather", methods=['POST'])
+def weather(unit="metric"):
+    payload = request.get_json()
+    city = payload["request"]["parameters"]["wh_city"]["value"]
+    country = payload["request"]["parameters"]["wh_country"]["value"]
+
+    API_KEY = '419676e45445c29164b1da280782d527'
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city},{country}&units={unit}&appid={API_KEY}"
+    
+    response = requests.get(url)
+    data = response.json()
+    temperature = data["main"]["temp"] 
+
+    return query_response(value=temperature, grammar_entry=None)

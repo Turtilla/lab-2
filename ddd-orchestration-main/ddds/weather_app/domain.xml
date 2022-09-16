@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<domain name="WeatherAppDomain" is_super_domain="true">
+  <goal type="perform" action="top">
+    <plan>
+      <forget_all/>
+      <findout type="goal"/>
+    </plan>
+  </goal>
+
+  <goal type="resolve" question_type="wh_question" predicate="temp">
+    <plan>
+      <findout type="wh_question" predicate="wh_city"/>
+      <findout type="wh_question" predicate="wh_country"/>
+      <invoke_service_query type="wh_question" predicate="temp"/>
+    </plan>
+  </goal>
+</domain>

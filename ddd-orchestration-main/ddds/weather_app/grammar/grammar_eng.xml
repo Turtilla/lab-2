@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar>
+
+  <action name="top">
+    <one-of>
+      <item>main menu</item>
+      <item>top</item>
+      <item>beginning</item>
+      <item>cancel</item>
+      <item>forget it</item>
+      <item>never mind</item>
+      <item>abort</item>
+    </one-of>
+  </action>
+
+  <action name="up">
+    <one-of>
+      <item>up</item>
+      <item>back</item>
+      <item>go back</item>
+    </one-of>
+  </action>
+
+  <question speaker="user" predicate="temp" type="wh_question">
+    <one-of>
+      <item>i want to know the temperature</item>
+      <item>i would like to know the temperature</item>
+      <item>tell me the the temperature</item>
+      <item>can you tell me the temperature</item>
+      <item>what is the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+      <item>tell me the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+      <item>can you tell me is the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+      <item>i would like to know the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+      <item>what is the temperature in <slot predicate="wh_city"/> </item>
+      <item>tell me the temperature in <slot predicate="wh_city"/> </item>
+      <item>can you tell me is the temperature in <slot predicate="wh_city"/> </item>
+      <item>i would like to know the temperature in <slot predicate="wh_city"/> </item>
+      <item>what is the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+      <item>tell me the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+      <item>can you tell me is the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+      <item>in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+      <item>in <slot predicate="wh_city"/> </item>
+      <item>in <slot predicate="wh_country"/> </item>
+    </one-of>
+  </question>
+
+  <individual name="warsaw">
+    <one-of>
+      <item>warsaw</item>
+    </one-of>
+  </individual>
+
+  <individual name="heidelberg">
+    <one-of>
+      <item>heidelberg</item>
+    </one-of>
+  </individual>
+
+  <individual name="gothenburg">
+    <one-of>
+      <item>gothenburg</item>
+    </one-of>
+  </individual>
+
+  <individual name="poland">
+    <one-of>
+      <item>poland</item>
+    </one-of>
+  </individual>
+
+  <individual name="germany">
+    <one-of>
+      <item>germany</item>
+    </one-of>
+  </individual>
+
+  <individual name="sweden">
+    <one-of>
+      <item>sweden</item>
+    </one-of>
+  </individual>
+
+  <question speaker="system" predicate="wh_city" type="wh_question">
+    in what city
+  </question>
+  
+  <question speaker="system" predicate="wh_country" type="wh_question">
+    in what country
+  </question>
+
+  <answer speaker="system" predicate="temp">
+    the temperature is <slot predicate="temp"/> degrees
+  </answer>
+
+  <question speaker="all" predicate="temp">
+    the temperature
+  </question>
+
+</grammar>

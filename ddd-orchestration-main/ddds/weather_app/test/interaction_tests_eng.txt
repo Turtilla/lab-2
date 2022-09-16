@@ -1,0 +1,15 @@
+--- asking the temperature (incremental)
+U> I would like to know the temperature
+S> In what city?
+U> In Warsaw
+S> In what country?
+U> Poland
+S> The temperature is * degrees
+--- asking the temperature (one-shot)
+U> What is the temperature in Heidelberg Germany
+S> The temperature is * degrees
+--- asking the temperature (overanswering)
+U> Can you tell me the temperature
+S> In what city?
+U> Gothenburg Sweden
+S> The temperature is * degrees

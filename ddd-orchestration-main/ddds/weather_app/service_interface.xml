@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service_interface>
+    <query name="temp">
+        <parameters>
+            <parameter predicate="wh_city" format="value"/>
+            <parameter predicate="wh_country" format="value"/>
+        </parameters>
+        <target>
+            <http endpoint="http://ddds-http-service/weather"/>
+        </target>
+    </query>
+</service_interface>

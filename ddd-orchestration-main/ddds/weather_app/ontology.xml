@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ontology name="WeatherAppOntology">
+
+    <predicate name="wh_city" sort="city"/>
+    <predicate name="wh_country" sort="country"/>
+    <predicate name="temp" sort="string"/>
+
+    <sort name="city" dynamic="true"/>
+    <sort name="country" dynamic="true"/>
+
+    <individual name="warsaw" sort="city"/>
+    <individual name="heidelberg" sort="city"/>
+    <individual name="gothenburg" sort="city"/>
+
+    <individual name="poland" sort="country"/>
+    <individual name="germany" sort="country"/>
+    <individual name="sweden" sort="country"/>
+
+</ontology>
