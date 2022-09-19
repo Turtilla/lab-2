@@ -53,6 +53,7 @@ def query_response(value, grammar_entry):
     }
     """)
     payload = response_template.render(value=value, grammar_entry=grammar_entry)
+    print("it's alive!!!")
     response = app.response_class(
         response=payload,
         status=200,
@@ -162,6 +163,6 @@ def weather(unit="metric"):
     
     response = requests.get(url)
     data = response.json()
-    temperature = data["main"]["temp"] 
+    temperature = str(data["main"]["temp"])
 
     return query_response(value=temperature, grammar_entry=None)
