@@ -21,11 +21,11 @@
     </one-of>
   </action>
 
-  <question speaker="user" predicate="temp" type="wh_question">
+  <question speaker="user" predicate="temp" type="alt_question">
     <one-of>
       <item>i want to know the temperature</item>
       <item>i would like to know the temperature</item>
-      <item>tell me the the temperature</item>
+      <item>tell me the temperature</item>
       <item>can you tell me the temperature</item>
       <item>what is the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
       <item>tell me the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
@@ -38,6 +38,31 @@
       <item>what is the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
       <item>tell me the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
       <item>can you tell me is the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+
+      <item>in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+      <item>in <slot predicate="wh_city"/> </item>
+      <item>in <slot predicate="wh_country"/> </item>
+    </one-of>
+  </question>
+
+    <question speaker="user" predicate="weather" type="alt_question">
+    <one-of>
+      <item>i want to know the weather</item>
+      <item>i would like to know the weather</item>
+      <item>tell me the the weather</item>
+      <item>can you tell me the weather</item>
+      <item>what is the weather in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+      <item>tell me the weather in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+      <item>can you tell me is the weather in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+      <item>i would like to know the weather in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+      <item>what is the weather in <slot predicate="wh_city"/> </item>
+      <item>tell me the weather in <slot predicate="wh_city"/> </item>
+      <item>can you tell me is the weather in <slot predicate="wh_city"/> </item>
+      <item>i would like to know the weather in <slot predicate="wh_city"/> </item>
+      <item>what is the weather in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+      <item>tell me the weather in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+      <item>can you tell me is the weather in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
+
       <item>in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
       <item>in <slot predicate="wh_city"/> </item>
       <item>in <slot predicate="wh_country"/> </item>
@@ -92,8 +117,16 @@
     the temperature is <slot predicate="temp"/> degrees
   </answer>
 
+  <answer speaker="system" predicate="weather">
+    the weather is <slot predicate="weather"/> 
+  </answer>
+
   <question speaker="all" predicate="temp">
     the temperature
+  </question>
+
+  <question speaker="all" predicate="weather">
+    the weather
   </question>
 
 </grammar>

@@ -4,6 +4,7 @@
     <predicate name="wh_city" sort="city"/>
     <predicate name="wh_country" sort="country"/>
     <predicate name="temp" sort="string"/>
+    <predicate name="weather" sort="string"/>
 
     <sort name="city" dynamic="true"/>
     <sort name="country" dynamic="true"/>

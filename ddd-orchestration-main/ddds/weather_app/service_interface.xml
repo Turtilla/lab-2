@@ -9,4 +9,14 @@
             <http endpoint="http://ddds-http-service/weather"/>
         </target>
     </query>
+
+    <query name="weather">
+        <parameters>
+            <parameter predicate="wh_city" format="value"/>
+            <parameter predicate="wh_country" format="value"/>
+        </parameters>
+        <target>
+            <http endpoint="http://ddds-http-service/get_weather"/>
+        </target>
+    </query>
 </service_interface>

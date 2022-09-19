@@ -166,3 +166,18 @@ def weather(unit="metric"):
     temperature = str(data["main"]["temp"])
 
     return query_response(value=temperature, grammar_entry=None)
+
+@app.route("/get_weather", methods=['POST'])
+def get_weather(unit="metric"):
+    payload = request.get_json()
+    city = payload["request"]["parameters"]["wh_city"]["value"]
+    country = payload["request"]["parameters"]["wh_country"]["value"]
+
+    API_KEY = '419676e45445c29164b1da280782d527'
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city},{country}&units={unit}&appid={API_KEY}"
+    
+    response = requests.get(url)
+    data = response.json()
+    temperature = str(data["weather"][0]["main"])
+
+    return query_response(value=temperature, grammar_entry=None)

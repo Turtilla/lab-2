@@ -3,7 +3,14 @@
   <goal type="perform" action="top">
     <plan>
       <forget_all/>
-      <findout type="goal"/>
+      <findout type="alt_question">
+        <alt>
+          <resolve type="wh_question" predicate="temp"/>
+        </alt>
+        <alt>
+          <resolve type="wh_question" predicate="weather"/>
+        </alt>
+      </findout>
     </plan>
   </goal>
 
@@ -12,6 +19,14 @@
       <findout type="wh_question" predicate="wh_city"/>
       <findout type="wh_question" predicate="wh_country"/>
       <invoke_service_query type="wh_question" predicate="temp"/>
+    </plan>
+  </goal>
+
+  <goal type="resolve" question_type="wh_question" predicate="weather">
+    <plan>
+      <findout type="wh_question" predicate="wh_city"/>
+      <findout type="wh_question" predicate="wh_country"/>
+      <invoke_service_query type="wh_question" predicate="weather"/>
     </plan>
   </goal>
 </domain>
