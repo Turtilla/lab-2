@@ -106,6 +106,12 @@
     </one-of>
   </individual>
 
+  <individual name="paris">
+    <one-of>
+      <item>paris</item>
+    </one-of>
+  </individual>
+
   <individual name="poland">
     <one-of>
       <item>poland</item>
@@ -121,6 +127,12 @@
   <individual name="sweden">
     <one-of>
       <item>sweden</item>
+    </one-of>
+  </individual>
+
+  <individual name="france">
+    <one-of>
+      <item>france</item>
     </one-of>
   </individual>
 

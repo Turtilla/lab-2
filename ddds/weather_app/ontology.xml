@@ -14,10 +14,12 @@
     <individual name="warsaw" sort="city"/>
     <individual name="heidelberg" sort="city"/>
     <individual name="gothenburg" sort="city"/>
+    <individual name="paris" sort="city"/>
 
     <individual name="poland" sort="country"/>
     <individual name="germany" sort="country"/>
     <individual name="sweden" sort="country"/>
+    <individual name="france" sort="country"/>
 
     <individual name="standard" sort="unit"/>
     <individual name="metric" sort="unit"/>
