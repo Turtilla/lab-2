@@ -159,7 +159,8 @@ def weather():
     city = payload["request"]["parameters"]["wh_city"]["value"]
     country = payload["request"]["parameters"]["wh_country"]["value"]
     # checking what unit was requested, defaulting to metric if none
-    if "wh_unit" in payload["request"]["parameters"]:
+    print(payload["request"]["parameters"]["wh_unit"])
+    if payload["request"]["parameters"]["wh_unit"]!=None:
       unit=payload["request"]["parameters"]["wh_unit"]["value"]
     else:
       unit="metric"

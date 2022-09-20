@@ -32,3 +32,19 @@ U> Can you tell me the weather
 S> In what city?
 U> Gothenburg Sweden
 S> The weather is * degrees
+
+--- asking the weather (incremental), with fillers, with units
+U> Hey, I would like to know the weather in farenheit
+S> In what city?
+U> In Warsaw
+S> In what country?
+U> Poland
+S> The weather is * 
+--- asking the weather (one-shot), with fillers
+U> Uh, what is the wether in Heidelberg Germany
+S> The weather is * 
+--- asking the temperature (overanswering), with fillers
+U> Can you tell me the temperature, please
+S> In what city?
+U> Gothenburg Sweden
+S> The weather is * degrees
