@@ -18,6 +18,7 @@
     <plan>
       <findout type="wh_question" predicate="wh_city"/>
       <findout type="wh_question" predicate="wh_country"/>
+      <bind predicate="wh_unit"/>
       <invoke_service_query type="wh_question" predicate="temp"/>
     </plan>
   </goal>

@@ -153,10 +153,23 @@ def action_success_response():
     return response
 
 @app.route("/weather", methods=['POST'])
-def weather(unit="metric"):
+def weather():
     payload = request.get_json()
     city = payload["request"]["parameters"]["wh_city"]["value"]
     country = payload["request"]["parameters"]["wh_country"]["value"]
+    if "wh_unit" in payload["request"]["parameters"]:
+      unit=payload["request"]["parameters"]["wh_unit"]["value"]
+    else:
+      unit="metric"
+
+    for letter in city:
+      if letter==" ":
+        letter="%20"
+
+    for letter in country:
+      if letter==" ":
+        letter="%20"    
+
 
     API_KEY = '419676e45445c29164b1da280782d527'
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city},{country}&units={unit}&appid={API_KEY}"
@@ -172,6 +185,14 @@ def get_weather(unit="metric"):
     payload = request.get_json()
     city = payload["request"]["parameters"]["wh_city"]["value"]
     country = payload["request"]["parameters"]["wh_country"]["value"]
+
+    for letter in city:
+      if letter==" ":
+        letter="%20"
+
+    for letter in country:
+      if letter==" ":
+        letter="%20"    
 
     API_KEY = '419676e45445c29164b1da280782d527'
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city},{country}&units={unit}&appid={API_KEY}"

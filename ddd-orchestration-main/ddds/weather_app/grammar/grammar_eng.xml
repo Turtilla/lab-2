@@ -25,7 +25,7 @@
     <one-of>
       <item>i want to know the temperature</item>
       <item>i would like to know the temperature</item>
-      <item>tell me the temperature</item>
+      <item>tell me the temperature</item> 
       <item>can you tell me the temperature</item>
       <item>what is the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
       <item>tell me the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
@@ -39,13 +39,25 @@
       <item>tell me the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
       <item>can you tell me is the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
 
-      <item>in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
-      <item>in <slot predicate="wh_city"/> </item>
-      <item>in <slot predicate="wh_country"/> </item>
+      <item>i want to know the temperature in <slot predicate="wh_unit"/></item>
+      <item>i would like to know the temperature in <slot predicate="wh_unit"/></item>
+      <item>tell me the temperature in <slot predicate="wh_unit"/> </item>
+      <item>can you tell me the temperature in <slot predicate="wh_unit"/></item>
+      <item>what is the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> in <slot predicate="wh_unit"/> </item>
+      <item>tell me the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> in <slot predicate="wh_unit"/></item>
+      <item>can you tell me is the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> in <slot predicate="wh_unit"/> </item>
+      <item>i would like to know the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> in <slot predicate="wh_unit"/> </item>
+      <item>what is the temperature in <slot predicate="wh_city"/> in <slot predicate="wh_unit"/> </item>
+      <item>tell me the temperature in <slot predicate="wh_city"/> in <slot predicate="wh_unit"/> </item>
+      <item>can you tell me is the temperature in <slot predicate="wh_city"/> in <slot predicate="wh_unit"/> </item>
+      <item>i would like to know the temperature in <slot predicate="wh_city"/> in <slot predicate="wh_unit"/> </item>
+      <item>what is the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> in <slot predicate="wh_unit"/> </item>
+      <item>tell me the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> in <slot predicate="wh_unit"/> </item>
+      <item>can you tell me is the temperature in <slot predicate="wh_city"/> <slot predicate="wh_country"/> in <slot predicate="wh_unit"/> </item>
     </one-of>
   </question>
 
-    <question speaker="user" predicate="weather" type="alt_question">
+  <question speaker="user" predicate="weather" type="alt_question">
     <one-of>
       <item>i want to know the weather</item>
       <item>i would like to know the weather</item>
@@ -62,12 +74,16 @@
       <item>what is the weather in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
       <item>tell me the weather in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
       <item>can you tell me is the weather in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
-
+    </one-of>
+  </question>
+  
+  <answer speaker="user">
+    <one-of>
       <item>in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
       <item>in <slot predicate="wh_city"/> </item>
       <item>in <slot predicate="wh_country"/> </item>
     </one-of>
-  </question>
+  </answer>
 
   <individual name="warsaw">
     <one-of>
@@ -102,6 +118,33 @@
   <individual name="sweden">
     <one-of>
       <item>sweden</item>
+    </one-of>
+  </individual>
+
+  <individual name="standard">
+    <one-of>
+      <item>standard</item>
+      <item>standard units</item>
+      <item>standard system</item>
+      <item>kelvin</item>
+    </one-of>
+  </individual>
+
+  <individual name="metric">
+    <one-of>
+      <item>metric</item>
+      <item>metric units</item>
+      <item>metric system</item>
+      <item>celsius</item>
+    </one-of>
+  </individual>
+
+  <individual name="imperial">
+    <one-of>
+      <item>imperial</item>
+      <item>imperial units</item>
+      <item>imperial system</item>
+      <item>farenheit</item>
     </one-of>
   </individual>
 
