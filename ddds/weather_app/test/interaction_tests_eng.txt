@@ -41,7 +41,7 @@ S> In what country?
 U> Poland
 S> The weather is *. 
 --- asking the weather (one-shot), with fillers
-U> Uh, what is the wether in Heidelberg Germany
+U> Uh, what i the weather in Heidelberg Germany
 S> The weather is *. 
 --- asking the temperature (overanswering), with fillers
 U> Can you tell me the temperature, please
