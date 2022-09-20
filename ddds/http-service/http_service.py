@@ -156,12 +156,12 @@ def action_success_response():
 def weather():
     payload = request.get_json()
     # extracting the requested city and country
-    city = payload["request"]["parameters"]["wh_city"]["value"]
-    country = payload["request"]["parameters"]["wh_country"]["value"]
+    city = payload["request"]["parameters"]["wh_city"]["grammar_entry"]
+    country = payload["request"]["parameters"]["wh_country"]["grammar_entry"]
     # checking what unit was requested, defaulting to metric if none
     print(payload["request"]["parameters"]["wh_unit"])
     if payload["request"]["parameters"]["wh_unit"]!=None:
-      unit=payload["request"]["parameters"]["wh_unit"]["value"]
+      unit=payload["request"]["parameters"]["wh_unit"]["grammar_entry"]
     else:
       unit="metric"
 
@@ -173,6 +173,9 @@ def weather():
     for letter in country:
       if letter==" ":
         letter="%20"    
+
+    print(city)
+    print(country)
 
     # making the request
     API_KEY = '419676e45445c29164b1da280782d527'
@@ -189,8 +192,8 @@ def weather():
 def get_weather(unit="metric"):
     payload = request.get_json()
     # extracting the requested city and country
-    city = payload["request"]["parameters"]["wh_city"]["value"]
-    country = payload["request"]["parameters"]["wh_country"]["value"]
+    city = payload["request"]["parameters"]["wh_city"]["grammar_entry"]
+    country = payload["request"]["parameters"]["wh_country"]["grammar_entry"]
 
     # fixing spaces so they work in the link
     for letter in city:

@@ -1,9 +1,9 @@
 --- asking the temperature (incremental)
 U> I would like to know the temperature
 S> In what city?
-U> In Warsaw
+U> In Paris
 S> In what country?
-U> Poland
+U> France
 S> The temperature is * degrees.
 --- asking the temperature (one-shot)
 U> What is the temperature in Heidelberg Germany
@@ -20,9 +20,9 @@ S> The temperature is * degrees.
 --- asking the weather (incremental)
 U> I would like to know the weather
 S> In what city?
-U> In Warsaw
+U> In Paris
 S> In what country?
-U> Poland
+U> France
 S> The weather is *. 
 --- asking the weather (one-shot)
 U> What is the weather in Heidelberg Germany
@@ -36,9 +36,9 @@ S> The weather is *.
 --- asking the weather (incremental), with fillers, with units
 U> Hey, I would like to know the weather in farenheit
 S> In what city?
-U> In Warsaw
+U> In Paris
 S> In what country?
-U> Poland
+U> France
 S> The weather is *. 
 --- asking the weather (one-shot), with fillers
 U> Uh, what i the weather in Heidelberg Germany
@@ -47,4 +47,4 @@ S> The weather is *.
 U> Can you tell me the temperature, please
 S> In what city?
 U> Gothenburg Sweden
-S> The weather is * degrees.
+S> The temperature is * degrees.
