@@ -79,6 +79,7 @@
   
   <answer speaker="user">
     <one-of>
+      <item> <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
       <item>in <slot predicate="wh_city"/> <slot predicate="wh_country"/> </item>
       <item>in <slot predicate="wh_city"/> </item>
       <item>in <slot predicate="wh_country"/> </item>
