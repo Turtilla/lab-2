@@ -155,13 +155,16 @@ def action_success_response():
 @app.route("/weather", methods=['POST'])
 def weather():
     payload = request.get_json()
+    # extracting the requested city and country
     city = payload["request"]["parameters"]["wh_city"]["value"]
     country = payload["request"]["parameters"]["wh_country"]["value"]
+    # checking what unit was requested, defaulting to metric if none
     if "wh_unit" in payload["request"]["parameters"]:
       unit=payload["request"]["parameters"]["wh_unit"]["value"]
     else:
       unit="metric"
 
+    # fixing spaces so they work in the link
     for letter in city:
       if letter==" ":
         letter="%20"
@@ -170,12 +173,13 @@ def weather():
       if letter==" ":
         letter="%20"    
 
-
+    # making the request
     API_KEY = '419676e45445c29164b1da280782d527'
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city},{country}&units={unit}&appid={API_KEY}"
     
     response = requests.get(url)
     data = response.json()
+    # extracting temperature
     temperature = str(data["main"]["temp"])
 
     return query_response(value=temperature, grammar_entry=None)
@@ -183,9 +187,11 @@ def weather():
 @app.route("/get_weather", methods=['POST'])
 def get_weather(unit="metric"):
     payload = request.get_json()
+    # extracting the requested city and country
     city = payload["request"]["parameters"]["wh_city"]["value"]
     country = payload["request"]["parameters"]["wh_country"]["value"]
 
+    # fixing spaces so they work in the link
     for letter in city:
       if letter==" ":
         letter="%20"
@@ -194,11 +200,13 @@ def get_weather(unit="metric"):
       if letter==" ":
         letter="%20"    
 
+    # making the request
     API_KEY = '419676e45445c29164b1da280782d527'
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city},{country}&units={unit}&appid={API_KEY}"
     
     response = requests.get(url)
     data = response.json()
-    temperature = str(data["weather"][0]["main"])
+    # extracting weather
+    weather_type = str(data["weather"][0]["main"])
 
-    return query_response(value=temperature, grammar_entry=None)
+    return query_response(value=weather_type, grammar_entry=None)
