@@ -161,18 +161,13 @@ def weather():
     # checking what unit was requested, defaulting to metric if none
     print(payload["request"]["parameters"]["wh_unit"])
     if payload["request"]["parameters"]["wh_unit"]!=None:
-      unit=payload["request"]["parameters"]["wh_unit"]["grammar_entry"]
+      unit=payload["request"]["parameters"]["wh_unit"]["value"]
     else:
       unit="metric"
 
     # fixing spaces so they work in the link
-    for letter in city:
-      if letter==" ":
-        letter="%20"
-
-    for letter in country:
-      if letter==" ":
-        letter="%20"    
+    city = city.replace(" ", "%20")
+    country = country.replace(" ", "%20")   
 
     print(city)
     print(country)
@@ -196,13 +191,8 @@ def get_weather(unit="metric"):
     country = payload["request"]["parameters"]["wh_country"]["grammar_entry"]
 
     # fixing spaces so they work in the link
-    for letter in city:
-      if letter==" ":
-        letter="%20"
-
-    for letter in country:
-      if letter==" ":
-        letter="%20"    
+    city = city.replace(" ", "%20")
+    country = country.replace(" ", "%20")      
 
     # making the request
     API_KEY = '419676e45445c29164b1da280782d527'
